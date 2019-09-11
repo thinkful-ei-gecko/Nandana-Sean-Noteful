@@ -5,12 +5,17 @@ import './App.css'
 
 class FolderSelectBox extends React.Component{
 
+    handleAdd(e){
+        e.preventDefault();
+        console.log("Ive been Clicked")
+    }
+    
     render () {
 
         return(
             <div className="folderSelectBox">
                 <FolderElement />
-                <button type="button">Add Folder</button>
+                <button type="button" onClick={this.handleAdd}>Add Folder</button>
             </div>
 
         )

@@ -4,12 +4,17 @@ import NoteElement from './NoteElement'
 
 class NotesOuterBox extends React.Component {
 
+   handleAdd(e) {
+       e.preventDefault();
+       console.log("Ive been clicked as well")
+   }
+   
     render () {
 
         return(
             <div className="notesOuterBox">
                 <NoteElement />
-                <button type="button">Add Note</button>
+                <button type="button" onClick={this.handleAdd}>Add Note</button>
             </div>
         )
     }
