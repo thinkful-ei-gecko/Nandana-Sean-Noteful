@@ -11,7 +11,7 @@ class NoteElement extends React.Component {
 
         return(
             <div>
-                <li className="noteElement"> Note 1 <button type="button" onClick={this.handleDelete}>Delete Note</button> </li>
+                <li className="noteElement"> Note 1 <br/><button type="button" onClick={this.handleDelete}>Delete Note</button> </li>
             </div>
         )
     }

@@ -6,10 +6,19 @@ import NotesOuterBox from './NotesOuterBox';
 
 class App extends React.Component {
   
-  state={}
+  state={
+    folderCount:0,
+    totalNoteCount:0,
+    noteCountInFolder:0,
+    contents:[{
+      folderNum:'',
+      noteContents:'',
+      dateModifed:'',
+    }],
+  }
 
   updateState(){
-
+      
   }
 
   render(){
