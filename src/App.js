@@ -6,28 +6,26 @@ import NotesOuterBox from './NotesOuterBox';
 
 class App extends React.Component {
   
-  state={
-    folderCount:0,
-    totalNoteCount:0,
-    noteCountInFolder:0,
-    contents:[{
-      folderNum:'',
-      noteContents:'',
-      dateModifed:'',
-    }],
-  }
+ state={
+   folders:this.props.store.folders,
+   notes:this.props.store.notes};
+  
+ handleOnclickFolder = (key) => {
+ const folderContents = this.state.notes.filter(note =>
+  (key===this.state.folders.folderid) );
+   this.setState({
+    notes:folderContents
+  });
 
-  updateState(){
-      
-  }
+ };
 
   render(){
   return (
     <div className="App">
         <Header />
         <div className="outerContainer">
-        <FolderSelectBox />
-        <NotesOuterBox />
+        <FolderSelectBox  storeFolders={this.state.folders} handleOnClickFolder={this.handleOnclickFolder}/>
+        <NotesOuterBox storeNotes={this.state.notes}/>
         </div>
     </div>
   )

@@ -11,14 +11,16 @@ class FolderSelectBox extends React.Component{
     }
     
     render () {
-
+        const folders = (this.props.storeFolders).map(folder => {
+            return <FolderElement folderName={folder.name} {...this.props} /> 
+        });
         return(
             <div className="folderSelectBox">
-                <FolderElement />
+                {folders}
                 <button type="button" onClick={this.handleAdd}>Add Folder</button>
             </div>
 
-        )
+        );
     }
 
 }

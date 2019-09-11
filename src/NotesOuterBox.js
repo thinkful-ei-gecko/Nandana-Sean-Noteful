@@ -10,10 +10,12 @@ class NotesOuterBox extends React.Component {
    }
    
     render () {
-
+        const notes = (this.props.storeNotes).map((note,id) => {
+            return <NoteElement noteName={note.name} /> 
+        });
         return(
             <div className="notesOuterBox">
-                <NoteElement />
+                {notes}
                 <button type="button" onClick={this.handleAdd}>Add Note</button>
             </div>
         )

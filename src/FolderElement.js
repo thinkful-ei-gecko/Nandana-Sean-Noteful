@@ -8,9 +8,9 @@ class FolderElement extends React.Component {
 
         return(
             <div>
-               <li className="folderElement">Folder</li>
-               <li className="folderElement">Folder</li>
-               <li className="folderElement">Folder</li> 
+               <li className="folderElement"
+               key={this.props.storeFolders.id} 
+               onClick={e => this.props.handleOnclickFolder(this.props.storeFolders.id)}>{this.props.folderName}</li>
             </div>
         )
     }
